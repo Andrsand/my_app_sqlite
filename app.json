@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "plugins": [
+      "expo-router",
+      "expo-sqlite"
+    ],
+    "name": "my_app_sqlite",
+    "slug": "my_app_sqlite",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f7e4155f-dea5-489d-b5e5-b9040ed0a83c"
+      }
+    },
+    "owner": "andrey_alexandr"
+  }
+}
