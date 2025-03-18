@@ -15,6 +15,9 @@
         "projectId": "f7e4155f-dea5-489d-b5e5-b9040ed0a83c"
       }
     },
-    "owner": "andrey_alexandr"
+    "owner": "andrey_alexandr",
+    "android": {
+      "package": "com.andrey_alexandr.my_app_sqlite"
+    }
   }
 }
