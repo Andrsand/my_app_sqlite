@@ -39,6 +39,15 @@ export default function TabHome() {
     setData(result);
   };
 
+  const handleDelete = async (id: number) => {
+    try {
+      await database.runAsync("DELETE FROM users WHERE id = ?;", [id]);
+      loadData();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <View>
       <Stack.Screen options={{ headerRight }} />
@@ -61,6 +70,7 @@ export default function TabHome() {
                   <Text>{item.name}</Text>
                   <Text>{item.email}</Text>
                 </View>
+                <View style={{ flex: 1, flexDirection: "row", justifyContent: "flex-end", gap: 10,}}>
                 <TouchableOpacity
                   onPress={() => {
                     router.push(`/modal?id=${item.id}`);
@@ -69,6 +79,15 @@ export default function TabHome() {
                 >
                   <Text style={styles.buttonText}>Edit</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    handleDelete(item.id);
+                  }}
+                  style={[styles.button, { backgroundColor: "red"}]}
+                >
+                  <Text style={styles.buttonText}>Delete</Text>
+                </TouchableOpacity>
+                </View>
               </View>
             </View>
           )}
